@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 public class Main {
 
     public static void printLeapYearStatus (int year) {
@@ -9,7 +10,7 @@ public class Main {
     }
 
     public static void suggestApp (int osType, int deviceYear) {
-        int currentYear = 2023;
+        int requiredYear = 2015;
 
         String osName;
         if (osType == 0) {
@@ -21,7 +22,7 @@ public class Main {
             return;
         }
 
-        if (deviceYear < currentYear) {
+        if (deviceYear < requiredYear) {
             System.out.println("Установите облегченную версию приложения для " + osName + " по ссылке");
         } else {
             System.out.println("Установите приложение для " + osName + " по ссылке");
@@ -51,8 +52,12 @@ public class Main {
     }
 
     public static void task3() {
+        LocalDate calculationDate = LocalDate.now();
+        System.out.println("Дата расчета: " + calculationDate);
 
-        int days = calculateDeliveryDays(55);
+        int deliveryDistance = 95;
+        int days = calculateDeliveryDays(deliveryDistance);
+
         if (days > 0) {
             System.out.println("Потребуется дней: " + days);
         } else {
